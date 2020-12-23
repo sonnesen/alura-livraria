@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+   mysqldb:
+      image: mysql
+      restart: always
+      ports:
+         - 3306:3306
+      environment:
+         MYSQL_ROOT_PASSWORD: secret
+         MYSQL_DATABASE: livrariadb
+      volumes:
+         - ./db:/docker-entrypoint-initdb.d
